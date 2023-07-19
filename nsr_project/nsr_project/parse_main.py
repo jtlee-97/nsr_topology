@@ -44,4 +44,4 @@ header.pprint.pprint(header.parse_data)
 
 # convert json format, always reset and new write (view: https://jsonlint.com/)
 with open("./result json/parsing_data.json", 'w') as f:
-    header.json.dump(parse_data, f)
+    header.json.dump(parse_data, f, indent=4) # 'indent=4' : make it easy to understand
