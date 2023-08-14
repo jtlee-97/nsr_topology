@@ -7,7 +7,7 @@ Function     : parse_main.py
 Prototype    : 
 Author       : Jongtae Lee (Ajou University)
 Revision     : v1.1   2023.07.10 New
-Modified     : 2023.07.12 By whdxo830
+Modified     : 2023.08.14 By whdxo830
 =================================================
 """
 
