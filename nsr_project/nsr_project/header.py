@@ -7,7 +7,7 @@ Function     : header.py
 Prototype    : import module
 Author       : Jongtae Lee (Ajou University)
 Revision     : v1.1   2023.07.10 New
-Modified     : 2023.07.12 By whdxo830
+Modified     : 2023.08.14 By whdxo830
 =================================================
 """
 
@@ -22,6 +22,8 @@ from parse_xml_conf import parse_xml_conf
 from parse_xml_arp import parse_xml_arp
 from parse_xml_interface import parse_xml_interface
 from parse_xml_route import parse_xml_route
+from parse_main import parse_main
 
+from analysis_data import analysis_data
 
 parse_data = {}

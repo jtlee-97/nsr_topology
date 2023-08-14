@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8af02f63-d585-4c8c-9e16-f598d0ca23da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>parse_main.py</StartupFile>
+    <StartupFile>__main__.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,12 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="analysis_data.py" />
     <Compile Include="header.py" />
     <Compile Include="parse_main.py" />
     <Compile Include="parse_xml_arp.py" />
     <Compile Include="parse_xml_conf.py" />
     <Compile Include="parse_xml_interface.py" />
     <Compile Include="parse_xml_route.py" />
+    <Compile Include="__main__.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
