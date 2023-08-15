@@ -1,12 +1,13 @@
 """
 =================================================
 National Security Research Institute (NSR) 
-Commissioned Research Project, Ajou University
+Network topology automation analysis algorithm 
+development project, Ajou University
 
 Function     : analysis_data.py
-Prototype    : analysis_data
+Prototype    : parse and analysis module test
 Author       : Huiyeon Jang (Ajou University)
-Revision     : v1.1   2023.07.00 New
+Revision     : v1.1   2023.07.20 New
 Modified     : 2023.08.14 By whdxo830
 =================================================
 """

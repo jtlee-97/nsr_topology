@@ -1,13 +1,14 @@
 """
 =================================================
 National Security Research Institute (NSR) 
-Commissioned Research Project, Ajou University
+Network topology automation analysis algorithm 
+development project, Ajou University
 
-Function     : parse_xml_arp.py
-Prototype    : parse_xml_arp
+Function     : __main__.py
+Prototype    : __main__
 Author       : Jongtae Lee (Ajou University)
-Revision     : v1.1   2023.07.11 New
-Modified     : 2023.07.12 By whdxo830
+Revision     : v1.1   2023.08.10 New
+Modified     : 2023.08.15 By whdxo830
 =================================================
 """
 import header
@@ -19,3 +20,10 @@ header.parse_main()
 header.analysis_data() # Test ver. for Mid.
 
 # Algorithm Process
+
+
+"""
+=================================================
+
+=================================================
+"""

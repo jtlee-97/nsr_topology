@@ -1,10 +1,11 @@
 """
 =================================================
 National Security Research Institute (NSR) 
-Commissioned Research Project, Ajou University
+Network topology automation analysis algorithm 
+development project, Ajou University
 
 Function     : parse_main.py
-Prototype    : 
+Prototype    : Separation of files and functions
 Author       : Jongtae Lee (Ajou University)
 Revision     : v1.1   2023.07.10 New
 Modified     : 2023.08.14 By whdxo830

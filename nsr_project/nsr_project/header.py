@@ -1,7 +1,8 @@
 """
 =================================================
 National Security Research Institute (NSR) 
-Commissioned Research Project, Ajou University
+Network topology automation analysis algorithm 
+development project, Ajou University
 
 Function     : header.py
 Prototype    : import module

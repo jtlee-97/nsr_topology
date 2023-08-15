@@ -1,10 +1,11 @@
 """
 =================================================
 National Security Research Institute (NSR) 
-Commissioned Research Project, Ajou University
+Network topology automation analysis algorithm 
+development project, Ajou University
 
 Function     : parse_xml_interface.py
-Prototype    : parse_xml_interface
+Prototype    : interface parse
 Author       : Jongtae Lee (Ajou University)
 Revision     : v1.3   2023.07.12 New
 Modified     : 2023.07.17 By whdxo830
