@@ -23,12 +23,55 @@
   <ItemGroup>
     <Compile Include="analysis_data.py" />
     <Compile Include="header.py" />
-    <Compile Include="parse_main.py" />
-    <Compile Include="parse_xml_arp.py" />
-    <Compile Include="parse_xml_conf.py" />
-    <Compile Include="parse_xml_interface.py" />
-    <Compile Include="parse_xml_route.py" />
+    <Compile Include="main_parse\parse_main.py" />
+    <Compile Include="main_parse\parse_xml_arp.py" />
+    <Compile Include="main_parse\parse_xml_conf.py" />
+    <Compile Include="main_parse\parse_xml_interface.py" />
+    <Compile Include="main_parse\parse_xml_route.py" />
+    <Compile Include="python_version_check.py" />
     <Compile Include="__main__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="after_work\" />
+    <Folder Include="config_file\" />
+    <Folder Include="main_parse\" />
+    <Folder Include="sub_parse\" />
+    <Folder Include="result_json\" />
+    <Folder Include="__pycache__\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="after_work\R3-R3-R1_arp.xml" />
+    <Content Include="after_work\R3-R3-R1_route.xml" />
+    <Content Include="config_file\R1_arp.xml" />
+    <Content Include="config_file\R1_conf.xml" />
+    <Content Include="config_file\R1_interface.xml" />
+    <Content Include="config_file\R1_route.xml" />
+    <Content Include="config_file\R2_arp.xml" />
+    <Content Include="config_file\R2_conf.xml" />
+    <Content Include="config_file\R2_interface.xml" />
+    <Content Include="config_file\R2_route.xml" />
+    <Content Include="config_file\R3_arp.xml" />
+    <Content Include="config_file\R3_conf.xml" />
+    <Content Include="config_file\R3_interface.xml" />
+    <Content Include="config_file\R3_route.xml" />
+    <Content Include="config_file\R4_arp.xml" />
+    <Content Include="config_file\R4_conf.xml" />
+    <Content Include="config_file\R4_interface.xml" />
+    <Content Include="config_file\R4_route.xml" />
+    <Content Include="config_file\R5_arp.xml" />
+    <Content Include="config_file\R5_conf.xml" />
+    <Content Include="config_file\R5_interface.xml" />
+    <Content Include="config_file\R5_route.xml" />
+    <Content Include="result_json\0714_json_sample.json" />
+    <Content Include="result_json\parsing_data.json" />
+    <Content Include="result_json\topology_data.json" />
+    <Content Include="__pycache__\analysis_data.cpython-39.pyc" />
+    <Content Include="__pycache__\header.cpython-39.pyc" />
+    <Content Include="__pycache__\parse_main.cpython-39.pyc" />
+    <Content Include="__pycache__\parse_xml_arp.cpython-39.pyc" />
+    <Content Include="__pycache__\parse_xml_conf.cpython-39.pyc" />
+    <Content Include="__pycache__\parse_xml_interface.cpython-39.pyc" />
+    <Content Include="__pycache__\parse_xml_route.cpython-39.pyc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

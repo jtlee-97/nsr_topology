@@ -17,7 +17,7 @@ import header
 header.parse_main()
 
 # Analysis Process
-header.analysis_data() # Test ver. for Mid.
+#header.analysis_data() # Test ver. for Mid.
 
 # Algorithm Process
 

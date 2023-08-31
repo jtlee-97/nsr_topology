@@ -13,7 +13,7 @@ Modified     : 2023.08.14 By whdxo830
 """
 import header 
 
-with open("./result json/parsing_data.json", 'r') as f: # read parsing_data.json
+with open("./result_json/parsing_data.json", 'r') as f: # read parsing_data.json
     json_data=header.json.load(f)
 
 def analysis_data():
