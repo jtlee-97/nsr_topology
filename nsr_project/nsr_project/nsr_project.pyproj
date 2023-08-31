@@ -38,6 +38,7 @@
     <Folder Include="sub_parse\" />
     <Folder Include="result_json\" />
     <Folder Include="__pycache__\" />
+    <Folder Include="연구현황\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="after_work\R3-R3-R1_arp.xml" />
@@ -72,6 +73,8 @@
     <Content Include="__pycache__\parse_xml_conf.cpython-39.pyc" />
     <Content Include="__pycache__\parse_xml_interface.cpython-39.pyc" />
     <Content Include="__pycache__\parse_xml_route.cpython-39.pyc" />
+    <Content Include="연구현황\%280809_HY%29 국보연_연구현황.pptx" />
+    <Content Include="연구현황\%280818_이종태%29 국보연_연구현황.docx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
