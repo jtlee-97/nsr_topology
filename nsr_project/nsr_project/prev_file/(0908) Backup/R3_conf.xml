@@ -1,10 +1,11 @@
 <rpc-reply xmlns:junos="http://xml.juniper.net/junos/14.1R1/junos">
-    <configuration junos:commit-seconds="1694155953" junos:commit-localtime="2023-09-08 06:52:33 UTC" junos:commit-user="root">
+    <configuration junos:commit-seconds="1684391449" junos:commit-localtime="2023-05-18 15:30:49 KST" junos:commit-user="user1">
             <version>14.1R1.10</version>
             <system>
-                <host-name>R4</host-name>
+                <host-name>R3</host-name>
+                <time-zone>Asia/Seoul</time-zone>
                 <root-authentication>
-                    <encrypted-password>$1$4OXeRSdA$jtB1mPZoZyNiZPAyf2666.</encrypted-password>
+                    <encrypted-password>$1$m99OesM0$v/KwG9uOqzuSZT.EBy9CT.</encrypted-password>
                 </root-authentication>
                 <login>
                     <user>
@@ -12,7 +13,7 @@
                         <uid>3000</uid>
                         <class>super-user</class>
                         <authentication>
-                            <encrypted-password>$1$xuFfOY6W$hGbBKf/4afOxtLQKsagQm.</encrypted-password>
+                            <encrypted-password>$1$M2mXPElP$/aQeJkkFQUZlKGmaLR7T./</encrypted-password>
                         </authentication>
                     </user>
                 </login>
@@ -56,83 +57,78 @@
                     </file>
                 </syslog>
             </system>
-            <chassis>
-                <fpc>
-                    <name>0</name>
-                    <pic>
-                        <name>0</name>
-                        <inline-services>
-                            <bandwidth>1g</bandwidth>
-                        </inline-services>
-                        <adaptive-services>
-                            <service-package>
-                                <layer-3/>
-                            </service-package>
-                        </adaptive-services>
-                    </pic>
-                </fpc>
-            </chassis>
-            <services>
-                <service-set>
-                    <name>NAT-SET</name>
-                    <nat-rules>
-                        <name>NAT_TEST_RULE</name>
-                    </nat-rules>
-                    <interface-service>
-                        <service-interface>si-0/0/0.0</service-interface>
-                    </interface-service>
-                </service-set>
-                <nat>
-                    <rule>
-                        <name>NAT_TEST_RULE</name>
-                        <match-direction>input</match-direction>
-                        <term>
-                            <name>LAB1</name>
-                            <from>
-                                <source-address>
-                                    <name>192.168.130.10/32</name>
-                                </source-address>
-                            </from>
-                            <then>
-                                <translated>
-                                    <source-prefix>192.168.32.10/32</source-prefix>
-                                    <translation-type>
-                                        <basic-nat44>
-                                        </basic-nat44>
-                                    </translation-type>
-                                </translated>
-                            </then>
-                        </term>
-                    </rule>
-                </nat>
-                <adaptive-services-pics>
-                    <traceoptions>
-                        <flag>
-                            <name>all</name>
-                        </flag>
-                    </traceoptions>
-                </adaptive-services-pics>
-            </services>
+            <logical-systems>
+                <name>R3-R1</name>
+                <interfaces>
+                    <interface>
+                        <name>ge-0/0/2</name>
+                        <unit>
+                            <name>0</name>
+                            <family>
+                                <inet>
+                                    <address>
+                                        <name>192.168.40.241/24</name>
+                                    </address>
+                                </inet>
+                            </family>
+                        </unit>
+                    </interface>
+                    <interface>
+                        <name>ge-0/0/3</name>
+                        <unit>
+                            <name>0</name>
+                            <family>
+                                <inet>
+                                    <address>
+                                        <name>192.168.41.1/24</name>
+                                    </address>
+                                </inet>
+                            </family>
+                        </unit>
+                    </interface>
+                    <interface>
+                        <name>ge-0/0/4</name>
+                        <unit>
+                            <name>0</name>
+                            <family>
+                                <inet>
+                                    <address>
+                                        <name>192.168.42.241/24</name>
+                                    </address>
+                                </inet>
+                            </family>
+                        </unit>
+                    </interface>
+                </interfaces>
+                <protocols>
+                    <ospf>
+                        <area>
+                            <name>0.0.0.0</name>
+                            <interface>
+                                <name>ge-0/0/2.0</name>
+                            </interface>
+                            <interface>
+                                <name>ge-0/0/3.0</name>
+                            </interface>
+                            <interface>
+                                <name>ge-0/0/4.0</name>
+                            </interface>
+                        </area>
+                    </ospf>
+                </protocols>
+            </logical-systems>
             <interfaces>
                 <interface>
                     <name>ge-0/0/0</name>
+                    <description>to R1</description>
+                    <speed>100m</speed>
                     <unit>
                         <name>0</name>
                         <family>
                             <inet>
                                 <address>
-                                    <name>192.168.30.242/24</name>
+                                    <name>192.168.20.241/24</name>
                                 </address>
-                            </inet>
-                        </family>
-                    </unit>
-                </interface>
-                <interface>
-                    <name>si-0/0/0</name>
-                    <unit>
-                        <name>0</name>
-                        <family>
-                            <inet>
                             </inet>
                         </family>
                     </unit>
@@ -144,46 +140,39 @@
                         <family>
                             <inet>
                                 <address>
-                                    <name>192.168.31.1/24</name>
+                                    <name>192.168.21.1/24</name>
                                 </address>
                             </inet>
                         </family>
                     </unit>
                 </interface>
                 <interface>
-                    <name>ge-0/0/2</name>
+                    <name>ge-0/0/5</name>
                     <unit>
                         <name>0</name>
                         <family>
                             <inet>
-                                <service>
-                                    <input>
-                                        <service-set>
-                                            <name>NAT-SET</name>
-                                        </service-set>
-                                    </input>
-                                    <output>
-                                        <service-set>
-                                            <name>NAT-SET</name>
-                                        </service-set>
-                                    </output>
-                                </service>
                                 <address>
-                                    <name>192.168.32.1/24</name>
+                                    <name>192.168.42.240/24</name>
+                                </address>
+                            </inet>
+                        </family>
+                    </unit>
+                </interface>
+                <interface>
+                    <name>lo0</name>
+                    <unit>
+                        <name>0</name>
+                        <family>
+                            <inet>
+                                <address>
+                                    <name>50.10.10.3/32</name>
                                 </address>
                             </inet>
                         </family>
                     </unit>
                 </interface>
             </interfaces>
-            <routing-options>
-                <static>
-                    <route>
-                        <name>192.168.130.0/24</name>
-                        <next-hop>192.168.32.2</next-hop>
-                    </route>
-                </static>
-            </routing-options>
             <protocols>
                 <ospf>
                     <area>
@@ -195,7 +184,7 @@
                             <name>ge-0/0/1.0</name>
                         </interface>
                         <interface>
-                            <name>ge-0/0/2.0</name>
+                            <name>ge-0/0/5.0</name>
                         </interface>
                     </area>
                 </ospf>

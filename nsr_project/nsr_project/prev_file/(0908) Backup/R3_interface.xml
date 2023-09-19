@@ -4,6 +4,7 @@
             <name>ge-0/0/0</name>
             <admin-status>up</admin-status>
             <oper-status>up</oper-status>
+            <description>to R1</description>
             <logical-interface>
                 <name>ge-0/0/0.0</name>
                 <admin-status>up</admin-status>
@@ -13,7 +14,7 @@
                 <address-family>
                     <address-family-name>inet</address-family-name>
                     <interface-address>
-                        <ifa-local junos:emit="emit">192.168.30.242/24</ifa-local>
+                        <ifa-local junos:emit="emit">192.168.20.241/24</ifa-local>
                     </interface-address>
                 </address-family>
                 <address-family>
@@ -70,21 +71,6 @@
             </logical-interface>
         </physical-interface>
         <physical-interface>
-            <name>si-0/0/0</name>
-            <admin-status>up</admin-status>
-            <oper-status>up</oper-status>
-            <logical-interface>
-                <name>si-0/0/0.0</name>
-                <admin-status>up</admin-status>
-                <oper-status>up</oper-status>
-                <filter-information>
-                </filter-information>
-                <address-family>
-                    <address-family-name>inet</address-family-name>
-                </address-family>
-            </logical-interface>
-        </physical-interface>
-        <physical-interface>
             <name>ge-0/0/1</name>
             <admin-status>up</admin-status>
             <oper-status>up</oper-status>
@@ -97,7 +83,7 @@
                 <address-family>
                     <address-family-name>inet</address-family-name>
                     <interface-address>
-                        <ifa-local junos:emit="emit">192.168.31.1/24</ifa-local>
+                        <ifa-local junos:emit="emit">192.168.21.1/24</ifa-local>
                     </interface-address>
                 </address-family>
                 <address-family>
@@ -118,7 +104,7 @@
                 <address-family>
                     <address-family-name>inet</address-family-name>
                     <interface-address>
-                        <ifa-local junos:emit="emit">192.168.32.1/24</ifa-local>
+                        <ifa-local junos:emit="emit">192.168.40.241/24</ifa-local>
                     </interface-address>
                 </address-family>
                 <address-family>
@@ -130,16 +116,64 @@
             <name>ge-0/0/3</name>
             <admin-status>up</admin-status>
             <oper-status>up</oper-status>
+            <logical-interface>
+                <name>ge-0/0/3.0</name>
+                <admin-status>up</admin-status>
+                <oper-status>up</oper-status>
+                <filter-information>
+                </filter-information>
+                <address-family>
+                    <address-family-name>inet</address-family-name>
+                    <interface-address>
+                        <ifa-local junos:emit="emit">192.168.41.1/24</ifa-local>
+                    </interface-address>
+                </address-family>
+                <address-family>
+                    <address-family-name>multiservice</address-family-name>
+                </address-family>
+            </logical-interface>
         </physical-interface>
         <physical-interface>
             <name>ge-0/0/4</name>
             <admin-status>up</admin-status>
             <oper-status>up</oper-status>
+            <logical-interface>
+                <name>ge-0/0/4.0</name>
+                <admin-status>up</admin-status>
+                <oper-status>up</oper-status>
+                <filter-information>
+                </filter-information>
+                <address-family>
+                    <address-family-name>inet</address-family-name>
+                    <interface-address>
+                        <ifa-local junos:emit="emit">192.168.42.241/24</ifa-local>
+                    </interface-address>
+                </address-family>
+                <address-family>
+                    <address-family-name>multiservice</address-family-name>
+                </address-family>
+            </logical-interface>
         </physical-interface>
         <physical-interface>
             <name>ge-0/0/5</name>
             <admin-status>up</admin-status>
             <oper-status>up</oper-status>
+            <logical-interface>
+                <name>ge-0/0/5.0</name>
+                <admin-status>up</admin-status>
+                <oper-status>up</oper-status>
+                <filter-information>
+                </filter-information>
+                <address-family>
+                    <address-family-name>inet</address-family-name>
+                    <interface-address>
+                        <ifa-local junos:emit="emit">192.168.42.240/24</ifa-local>
+                    </interface-address>
+                </address-family>
+                <address-family>
+                    <address-family-name>multiservice</address-family-name>
+                </address-family>
+            </logical-interface>
         </physical-interface>
         <physical-interface>
             <name>ge-0/0/6</name>
@@ -207,6 +241,36 @@
             <oper-status>up</oper-status>
         </physical-interface>
         <physical-interface>
+            <name>em6</name>
+            <admin-status>up</admin-status>
+            <oper-status>up</oper-status>
+        </physical-interface>
+        <physical-interface>
+            <name>em7</name>
+            <admin-status>up</admin-status>
+            <oper-status>up</oper-status>
+        </physical-interface>
+        <physical-interface>
+            <name>em8</name>
+            <admin-status>up</admin-status>
+            <oper-status>up</oper-status>
+        </physical-interface>
+        <physical-interface>
+            <name>em9</name>
+            <admin-status>up</admin-status>
+            <oper-status>up</oper-status>
+        </physical-interface>
+        <physical-interface>
+            <name>em10</name>
+            <admin-status>up</admin-status>
+            <oper-status>up</oper-status>
+        </physical-interface>
+        <physical-interface>
+            <name>em11</name>
+            <admin-status>up</admin-status>
+            <oper-status>up</oper-status>
+        </physical-interface>
+        <physical-interface>
             <name>gre</name>
             <admin-status>up</admin-status>
             <oper-status>up</oper-status>
@@ -225,6 +289,20 @@
             <name>lo0</name>
             <admin-status>up</admin-status>
             <oper-status>up</oper-status>
+            <logical-interface>
+                <name>lo0.0</name>
+                <admin-status>up</admin-status>
+                <oper-status>up</oper-status>
+                <filter-information>
+                </filter-information>
+                <address-family>
+                    <address-family-name>inet</address-family-name>
+                    <interface-address>
+                        <ifa-local>50.10.10.3</ifa-local>
+                        <ifa-destination junos:emit="emit">0/0</ifa-destination>
+                    </interface-address>
+                </address-family>
+            </logical-interface>
             <logical-interface>
                 <name>lo0.16384</name>
                 <admin-status>up</admin-status>

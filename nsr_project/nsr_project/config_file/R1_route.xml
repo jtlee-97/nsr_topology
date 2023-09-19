@@ -16,7 +16,7 @@
                     <last-active/>
                     <protocol-name>Direct</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87050">1d 00:10:50</age>
+                    <age junos:seconds="9786721">16w1d 06:32:01</age>
                     <nh>
                         <selected-next-hop/>
                         <via>lo0.0</via>
@@ -31,7 +31,7 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="84713">23:31:53</age>
+                    <age junos:seconds="9784384">16w1d 05:53:04</age>
                     <metric>10</metric>
                     <nh>
                         <selected-next-hop/>
@@ -48,7 +48,7 @@
                     <last-active/>
                     <protocol-name>Static</protocol-name>
                     <preference>5</preference>
-                    <age junos:seconds="87011">1d 00:10:11</age>
+                    <age junos:seconds="9786682">16w1d 06:31:22</age>
                     <nh>
                         <selected-next-hop/>
                         <to>100.10.30.254</to>
@@ -64,7 +64,7 @@
                     <last-active/>
                     <protocol-name>Direct</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87011">1d 00:10:11</age>
+                    <age junos:seconds="9786682">16w1d 06:31:22</age>
                     <nh>
                         <selected-next-hop/>
                         <via>ge-0/0/0.0</via>
@@ -79,7 +79,7 @@
                     <last-active/>
                     <protocol-name>Local</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87012">1d 00:10:12</age>
+                    <age junos:seconds="9786683">16w1d 06:31:23</age>
                     <nh-type>Local</nh-type>
                     <nh>
                         <nh-local-interface>ge-0/0/0.0</nh-local-interface>
@@ -94,7 +94,7 @@
                     <last-active/>
                     <protocol-name>Direct</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87011">1d 00:10:11</age>
+                    <age junos:seconds="9786682">16w1d 06:31:22</age>
                     <nh>
                         <selected-next-hop/>
                         <via>ge-0/0/1.0</via>
@@ -109,7 +109,7 @@
                     <last-active/>
                     <protocol-name>Local</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87012">1d 00:10:12</age>
+                    <age junos:seconds="9786683">16w1d 06:31:23</age>
                     <nh-type>Local</nh-type>
                     <nh>
                         <nh-local-interface>ge-0/0/1.0</nh-local-interface>
@@ -124,7 +124,7 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="84713">23:31:53</age>
+                    <age junos:seconds="9784384">16w1d 05:53:04</age>
                     <metric>11</metric>
                     <nh>
                         <selected-next-hop/>
@@ -141,7 +141,7 @@
                     <last-active/>
                     <protocol-name>Direct</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87011">1d 00:10:11</age>
+                    <age junos:seconds="9786682">16w1d 06:31:22</age>
                     <nh>
                         <selected-next-hop/>
                         <via>ge-0/0/2.0</via>
@@ -156,7 +156,7 @@
                     <last-active/>
                     <protocol-name>Local</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87012">1d 00:10:12</age>
+                    <age junos:seconds="9786683">16w1d 06:31:23</age>
                     <nh-type>Local</nh-type>
                     <nh>
                         <nh-local-interface>ge-0/0/2.0</nh-local-interface>
@@ -171,7 +171,7 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="72792">20:13:12</age>
+                    <age junos:seconds="24263">06:44:23</age>
                     <metric>2</metric>
                     <nh>
                         <selected-next-hop/>
@@ -188,7 +188,7 @@
                     <last-active/>
                     <protocol-name>Direct</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87011">1d 00:10:11</age>
+                    <age junos:seconds="9786682">16w1d 06:31:22</age>
                     <nh>
                         <selected-next-hop/>
                         <via>ge-0/0/3.0</via>
@@ -203,7 +203,7 @@
                     <last-active/>
                     <protocol-name>Direct</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87011">1d 00:10:11</age>
+                    <age junos:seconds="9786682">16w1d 06:31:22</age>
                     <nh>
                         <selected-next-hop/>
                         <via>ge-0/0/4.0</via>
@@ -218,7 +218,7 @@
                     <last-active/>
                     <protocol-name>Local</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87012">1d 00:10:12</age>
+                    <age junos:seconds="9786683">16w1d 06:31:23</age>
                     <nh-type>Local</nh-type>
                     <nh>
                         <nh-local-interface>ge-0/0/4.0</nh-local-interface>
@@ -233,7 +233,7 @@
                     <last-active/>
                     <protocol-name>Local</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="87012">1d 00:10:12</age>
+                    <age junos:seconds="9786683">16w1d 06:31:23</age>
                     <nh-type>Local</nh-type>
                     <nh>
                         <nh-local-interface>ge-0/0/3.0</nh-local-interface>
@@ -248,7 +248,7 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="82686">22:58:06</age>
+                    <age junos:seconds="9782357">16w1d 05:19:17</age>
                     <metric>2</metric>
                     <nh>
                         <selected-next-hop/>
@@ -265,10 +265,14 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="84987">23:36:27</age>
+                    <age junos:seconds="10398">02:53:18</age>
                     <metric>2</metric>
                     <nh>
                         <selected-next-hop/>
+                        <to>192.168.30.242</to>
+                        <via>ge-0/0/3.0</via>
+                    </nh>
+                    <nh>
                         <to>192.168.30.230</to>
                         <via>ge-0/0/4.0</via>
                     </nh>
@@ -282,7 +286,7 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="70025">19:27:05</age>
+                    <age junos:seconds="9769696">16w1d 01:48:16</age>
                     <metric>2</metric>
                     <nh>
                         <selected-next-hop/>
@@ -299,7 +303,7 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="70025">19:27:05</age>
+                    <age junos:seconds="24232">06:43:52</age>
                     <metric>3</metric>
                     <nh>
                         <to>192.168.20.241</to>
@@ -320,7 +324,7 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="70042">19:27:22</age>
+                    <age junos:seconds="24263">06:44:23</age>
                     <metric>2</metric>
                     <nh>
                         <selected-next-hop/>
@@ -337,7 +341,7 @@
                     <last-active/>
                     <protocol-name>Direct</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="70030">19:27:10</age>
+                    <age junos:seconds="9769701">16w1d 01:48:21</age>
                     <nh>
                         <selected-next-hop/>
                         <via>ge-0/0/7.0</via>
@@ -352,7 +356,7 @@
                     <last-active/>
                     <protocol-name>Local</protocol-name>
                     <preference>0</preference>
-                    <age junos:seconds="70030">19:27:10</age>
+                    <age junos:seconds="9769701">16w1d 01:48:21</age>
                     <nh-type>Local</nh-type>
                     <nh>
                         <nh-local-interface>ge-0/0/7.0</nh-local-interface>
@@ -367,7 +371,7 @@
                     <last-active/>
                     <protocol-name>OSPF</protocol-name>
                     <preference>10</preference>
-                    <age junos:seconds="87054">1d 00:10:54</age>
+                    <age junos:seconds="9786725">16w1d 06:32:05</age>
                     <metric>1</metric>
                     <nh-type>MultiRecv</nh-type>
                 </rt-entry>

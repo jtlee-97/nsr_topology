@@ -13,7 +13,7 @@
                 <address-family>
                     <address-family-name>inet</address-family-name>
                     <interface-address>
-                        <ifa-local junos:emit="emit">192.168.30.242/24</ifa-local>
+                        <ifa-local junos:emit="emit">10.0.1.2/24</ifa-local>
                     </interface-address>
                 </address-family>
                 <address-family>
@@ -70,21 +70,6 @@
             </logical-interface>
         </physical-interface>
         <physical-interface>
-            <name>si-0/0/0</name>
-            <admin-status>up</admin-status>
-            <oper-status>up</oper-status>
-            <logical-interface>
-                <name>si-0/0/0.0</name>
-                <admin-status>up</admin-status>
-                <oper-status>up</oper-status>
-                <filter-information>
-                </filter-information>
-                <address-family>
-                    <address-family-name>inet</address-family-name>
-                </address-family>
-            </logical-interface>
-        </physical-interface>
-        <physical-interface>
             <name>ge-0/0/1</name>
             <admin-status>up</admin-status>
             <oper-status>up</oper-status>
@@ -97,7 +82,7 @@
                 <address-family>
                     <address-family-name>inet</address-family-name>
                     <interface-address>
-                        <ifa-local junos:emit="emit">192.168.31.1/24</ifa-local>
+                        <ifa-local junos:emit="emit">10.0.2.1/24</ifa-local>
                     </interface-address>
                 </address-family>
                 <address-family>
@@ -118,7 +103,7 @@
                 <address-family>
                     <address-family-name>inet</address-family-name>
                     <interface-address>
-                        <ifa-local junos:emit="emit">192.168.32.1/24</ifa-local>
+                        <ifa-local junos:emit="emit">10.0.3.1/24</ifa-local>
                     </interface-address>
                 </address-family>
                 <address-family>

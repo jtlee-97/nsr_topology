@@ -1,0 +1,26 @@
+<rpc-reply xmlns:junos="http://xml.juniper.net/junos/14.1R1/junos">
+    <arp-table-information xmlns="http://xml.juniper.net/junos/14.1R1/junos-arp" junos:style="normal">
+        <arp-table-entry>
+            <mac-address>00:05:86:71:d7:04</mac-address>
+            <ip-address>192.168.30.229</ip-address>
+            <hostname>192.168.30.229</hostname>
+            <interface-name>ge-0/0/0.0</interface-name>
+            <arp-table-entry-flags>
+                <none/>
+            </arp-table-entry-flags>
+        </arp-table-entry>
+        <arp-table-entry>
+            <mac-address>00:50:79:66:68:06</mac-address>
+            <ip-address>192.168.32.10</ip-address>
+            <hostname>192.168.32.10</hostname>
+            <interface-name>ge-0/0/1.0</interface-name>
+            <arp-table-entry-flags>
+                <none/>
+            </arp-table-entry-flags>
+        </arp-table-entry>
+        <arp-entry-count>2</arp-entry-count>
+    </arp-table-information>
+    <cli>
+        <banner></banner>
+    </cli>
+</rpc-reply>
