@@ -1,7 +1,7 @@
 <rpc-reply xmlns:junos="http://xml.juniper.net/junos/14.1R1/junos">
     <arp-table-information xmlns="http://xml.juniper.net/junos/14.1R1/junos-arp" junos:style="normal">
         <arp-table-entry>
-            <mac-address>00:05:86:71:c6:02</mac-address>
+            <mac-address>00:05:86:71:65:02</mac-address>
             <ip-address>192.168.40.241</ip-address>
             <hostname>192.168.40.241</hostname>
             <interface-name>ge-0/0/5.0</interface-name>

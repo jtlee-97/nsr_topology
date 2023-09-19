@@ -19,7 +19,7 @@
             </arp-table-entry-flags>
         </arp-table-entry>
         <arp-table-entry>
-            <mac-address>00:05:86:71:c6:05</mac-address>
+            <mac-address>00:05:86:71:65:05</mac-address>
             <ip-address>192.168.42.240</ip-address>
             <hostname>192.168.42.240</hostname>
             <interface-name>ge-0/0/4.0</interface-name>
