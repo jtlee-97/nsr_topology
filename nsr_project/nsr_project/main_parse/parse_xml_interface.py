@@ -13,6 +13,12 @@ Modified     : 2023. 08. 31
 =================================================
 """
 import header
+import os
+
+current_working_directory = os.getcwd()
+current_script_directory = os.path.dirname(os.path.abspath(__file__))
+parent_directory = os.path.abspath(os.path.join(current_script_directory, ".."))
+config_file_path = os.path.join(parent_directory, "config_file")
 
 def parse_xml_interface(xml_file):
     tree = header.ET.parse(xml_file)

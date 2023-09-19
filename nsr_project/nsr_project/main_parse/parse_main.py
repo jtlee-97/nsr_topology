@@ -12,14 +12,20 @@ Modified     : 2023.08.14 By whdxo830
 =================================================
 """
 
+from unittest import result
 import header
 import os
+import json
+import datetime
 
 current_working_directory = os.getcwd()
-print(current_working_directory)
+current_script_directory = os.path.dirname(os.path.abspath(__file__))
+parent_directory = os.path.abspath(os.path.join(current_script_directory, ".."))
+config_file_path = os.path.join(parent_directory, "config_file")
+result_file_path = os.path.join(parent_directory, "result_json")
 
 def parse_main():
-    path = './config_file'
+    path = config_file_path
     file_lst = header.os.listdir(path)
     order = ['conf', 'interface', 'arp', 'route']
     #file_lst.sort(key=lambda x: (int(x.split('_')[0][1:]), order.index(x.split('_')[1].split('.')[0])))
@@ -45,15 +51,13 @@ def parse_main():
                 header.parse_xml_interface(filepath)
 
     # convert json format, always reset and new write (view: https://jsonlint.com/)
-    result_path = '../result_json/parsing_data.json'
-    with open(result_path, 'w') as f:
-        header.json.dump(header.parsing_data, f, indent=4)
+    # with open(result_file_path, 'w') as f:
+    #     header.json.dump(header.parsing_data, f, indent=4)
     
 
-    # current_datetime = datetime.datetime.now()
-    # formatted_datetime = current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
-    # result_directory = 'g:\\내 드라이브\\[1] Ajou University\\[프로젝트]\\[1] 네트워크 토폴로지 분석 자동화 연구\\연구\\(00) Main Code (rev_0814)\\nsr_project\\nsr_project\\result_json'
-    # result_file_name = f'parsing_data_{formatted_datetime}.json'
-    # result_path = os.path.join(result_directory, result_file_name)
-    # with open(result_path, 'w') as f:
-    #     json.dump(header.parsing_data, f, indent=4)
+    current_datetime = datetime.datetime.now()
+    formatted_datetime = current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
+    result_file_name = f'parsing_data_{formatted_datetime}.json'
+    result_path = os.path.join(result_file_path, result_file_name)
+    with open(result_path, 'w') as f:
+        json.dump(header.parsing_data, f, indent=4)

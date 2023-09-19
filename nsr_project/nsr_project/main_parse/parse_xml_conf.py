@@ -14,6 +14,12 @@ Modified     : 2023. 08. 31
 =================================================
 """
 import header
+import os
+
+current_working_directory = os.getcwd()
+current_script_directory = os.path.dirname(os.path.abspath(__file__))
+parent_directory = os.path.abspath(os.path.join(current_script_directory, ".."))
+config_file_path = os.path.join(parent_directory, "config_file")
 
 def parse_xml_conf(xml_file):
     tree = header.ET.parse(xml_file)
@@ -65,16 +71,17 @@ def parse_xml_conf(xml_file):
 
 # Move [logical-system file] to [logical-system folder]
 def move_logical(lg_sys_list): 
-    path = './config_file'
-    dsc = "./logical_systems"
+    path = config_file_path
+    dsc = os.path.join(parent_directory, "logical_systems")
     file_list = header.os.listdir(path)
     for lg in lg_sys_list:
         for file in file_list:
             lg_file = header.re.search(lg, file)
             if lg_file is not None:
                 src = path + '/' + file
-                header.shutil.move(src, dsc)
-                
+                # 이동으로 인한 디버그 오류 복제로 변경
+                #header.shutil.move(src, dsc)
+                header.shutil.copy(src, dsc)
 
 
 # Before Code (mid term' 0831)
