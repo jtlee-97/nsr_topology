@@ -13,9 +13,13 @@ Modified     : 2023.08.14 By whdxo830
 """
 
 import header
+import os
+
+current_working_directory = os.getcwd()
+print(current_working_directory)
 
 def parse_main():
-    path = "./config_file"
+    path = './config_file'
     file_lst = header.os.listdir(path)
     order = ['conf', 'interface', 'arp', 'route']
     #file_lst.sort(key=lambda x: (int(x.split('_')[0][1:]), order.index(x.split('_')[1].split('.')[0])))
@@ -40,14 +44,16 @@ def parse_main():
                 # print(filepath)
                 header.parse_xml_interface(filepath)
 
-    # print()
-    # print('================================[Parse Process START]================================')            
-    # print()
-    # header.pprint.pprint(header.parse_data)
-    # print('================================[Parse Process END]================================')            
-
     # convert json format, always reset and new write (view: https://jsonlint.com/)
-    with open("./result_json/parsing_data.json", 'w') as f:
+    result_path = '../result_json/parsing_data.json'
+    with open(result_path, 'w') as f:
         header.json.dump(header.parsing_data, f, indent=4)
+    
 
-#parse_main()
+    # current_datetime = datetime.datetime.now()
+    # formatted_datetime = current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
+    # result_directory = 'g:\\내 드라이브\\[1] Ajou University\\[프로젝트]\\[1] 네트워크 토폴로지 분석 자동화 연구\\연구\\(00) Main Code (rev_0814)\\nsr_project\\nsr_project\\result_json'
+    # result_file_name = f'parsing_data_{formatted_datetime}.json'
+    # result_path = os.path.join(result_directory, result_file_name)
+    # with open(result_path, 'w') as f:
+    #     json.dump(header.parsing_data, f, indent=4)
