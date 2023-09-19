@@ -14,9 +14,18 @@ Modified     : 2023. 08. 31
 =================================================
 """
 import header
+import os
+
+current_working_directory = os.getcwd()
+current_script_directory = os.path.dirname(os.path.abspath(__file__))
+parent_directory = os.path.abspath(os.path.join(current_script_directory, ".."))
+config_file_path = os.path.join(parent_directory, "config_file")
 
 def parse_xml_arp(xml_file):
 
+    # 문제점 확인 (09.19) = 현재 폴더를 옮겨버려서 logical system 파일을 못읽어옴 (예외처리 필요)
+    # 이는, 초기 설정 시 발생됨. 모든 파일을 읽어둔 상태의 리스트 생성 후, 각 파일을 읽으려는데 conf에서 먼저 옮겨버리기 때문에, move가 아닌 복제형태로 하는 것이 좋을 것 같음
+    # 만일 logical_systems에 4가지 파일이 옮겨져있는 상황이라면 실행오류가 발생하지 않음.
     tree = header.ET.parse(xml_file)
     root = tree.getroot()
 

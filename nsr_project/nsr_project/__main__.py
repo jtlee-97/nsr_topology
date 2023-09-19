@@ -16,11 +16,9 @@ import header
 while True:
     answer = input("Would you like to update with new data? (Y/N) : ")
     if answer == 'Y' or answer == 'y':
-        # 'Y' 또는 'y' 입력 시 실행
         header.parse_main()
         break  
     elif answer == 'N' or answer == 'n':
-        # 'N' 또는 'n' 입력 시 종료
         break  
     else:
         print("Invalid input. Please enter 'Y' or 'N'.")
