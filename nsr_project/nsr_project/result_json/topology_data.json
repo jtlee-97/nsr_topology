@@ -1,4 +1,66 @@
 {
+<<<<<<< HEAD:nsr_project/nsr_project/result json/topology_data.json
+	"R1": {
+		"Connectivity": [
+			{
+				"Device": "R2",
+				"Interface": "ge-0/0/0",
+				"Network": "192.168.10.241"
+			},
+			{
+				"Device": "R3",
+				"Interface": "ge-0/0/0",
+				"Network": "192.168.20.241"
+			},
+			{
+				"Device": "R4",
+				"Interface": "ge-0/0/0",
+				"Network": "192.168.30.242"
+			},
+			{
+				"Device": "R5",
+				"Interface": "ge-0/0/0",
+				"Network": "192.168.30.230"
+			}
+		]
+	},
+	"R2": {
+		"Connectivity": [
+			{
+				"Device": "R1",
+				"Interface": "ge-0/0/1",
+				"Network": "192.168.10.240"
+			}
+		]
+	},
+	"R3": {
+		"Connectivity": [
+			{
+				"Device": "R1",
+				"Interface": "ge-0/0/2",
+				"Network": "192.168.20.240"
+			}
+		]
+	},
+	"R4": {
+		"Connectivity": [
+			{
+				"Device": "R1",
+				"Interface": "ge-0/0/3",
+				"Network": "192.168.30.240"
+			}
+		]
+	},
+	"R5": {
+		"Connectivity": [
+			{
+				"Device": "R1",
+				"Interface": "ge-0/0/4",
+				"Network": "192.168.30.229"
+			}
+		]
+	}
+=======
     "R1": {
         "Connectivity": {
             "Router": {
@@ -405,4 +467,5 @@
             }
         }
     }
+>>>>>>> c83067d3a27663a345faa130fda359cacd603957:nsr_project/nsr_project/result_json/topology_data.json
 }
