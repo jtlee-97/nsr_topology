@@ -16,14 +16,12 @@ import header
 while True:
     answer = input("Would you like to update with new data? (Y/N) : ")
     if answer == 'Y' or answer == 'y':
-        header.parse_main()
+        header.init_folder() #initiation
+        header.parse_main() #parsing
+        header.analysis_data() # topology analysis
         break  
     elif answer == 'N' or answer == 'n':
         break  
     else:
         print("Invalid input. Please enter 'Y' or 'N'.")
 
-# Analysis Process
-#header.analysis_data() # Test ver. for Mid.
-
-# Algorithm Process

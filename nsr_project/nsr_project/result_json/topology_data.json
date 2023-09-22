@@ -1,66 +1,4 @@
 {
-<<<<<<< HEAD:nsr_project/nsr_project/result json/topology_data.json
-	"R1": {
-		"Connectivity": [
-			{
-				"Device": "R2",
-				"Interface": "ge-0/0/0",
-				"Network": "192.168.10.241"
-			},
-			{
-				"Device": "R3",
-				"Interface": "ge-0/0/0",
-				"Network": "192.168.20.241"
-			},
-			{
-				"Device": "R4",
-				"Interface": "ge-0/0/0",
-				"Network": "192.168.30.242"
-			},
-			{
-				"Device": "R5",
-				"Interface": "ge-0/0/0",
-				"Network": "192.168.30.230"
-			}
-		]
-	},
-	"R2": {
-		"Connectivity": [
-			{
-				"Device": "R1",
-				"Interface": "ge-0/0/1",
-				"Network": "192.168.10.240"
-			}
-		]
-	},
-	"R3": {
-		"Connectivity": [
-			{
-				"Device": "R1",
-				"Interface": "ge-0/0/2",
-				"Network": "192.168.20.240"
-			}
-		]
-	},
-	"R4": {
-		"Connectivity": [
-			{
-				"Device": "R1",
-				"Interface": "ge-0/0/3",
-				"Network": "192.168.30.240"
-			}
-		]
-	},
-	"R5": {
-		"Connectivity": [
-			{
-				"Device": "R1",
-				"Interface": "ge-0/0/4",
-				"Network": "192.168.30.229"
-			}
-		]
-	}
-=======
     "R1": {
         "Connectivity": {
             "Router": {
@@ -73,7 +11,7 @@
                 "R3": {
                     "Interface": "ge-0/0/0.0",
                     "ip-address": "192.168.20.241",
-                    "mac-address": "00:05:86:71:65:00",
+                    "mac-address": "00:05:86:71:c6:00",
                     "via": "ge-0/0/2.0"
                 },
                 "R4": {
@@ -176,7 +114,7 @@
                 "R3-R1": {
                     "Interface": "ge-0/0/2.0",
                     "ip-address": "192.168.40.241",
-                    "mac-address": "00:05:86:71:65:02",
+                    "mac-address": "00:05:86:71:c6:02",
                     "via": "ge-0/0/5.0"
                 },
                 "R1": {
@@ -264,13 +202,22 @@
                 "R3-R1": {
                     "Interface": "ge-0/0/4.0",
                     "ip-address": "192.168.42.241",
-                    "mac-address": "00:05:86:71:65:04",
+                    "mac-address": "00:05:86:71:c6:04",
                     "via": "ge-0/0/5.0"
+                },
+                "R6": {
+                    "Interface": "ge-0/0/0.0",
+                    "ip-address": "10.0.1.2",
+                    "mac-address": "00:05:86:71:01:00",
+                    "via": "ge-0/0/6.0"
                 }
             },
             "Terminal": {}
         },
         "Accesible": {
+            "10.0.1.0": {
+                "via": "R3"
+            },
             "50.10.10.1": {
                 "via": "R1"
             },
@@ -330,7 +277,7 @@
                 "R3": {
                     "Interface": "ge-0/0/5.0",
                     "ip-address": "192.168.42.240",
-                    "mac-address": "00:05:86:71:65:05",
+                    "mac-address": "00:05:86:71:c6:05",
                     "via": "ge-0/0/4.0"
                 }
             },
@@ -351,6 +298,12 @@
                     "ip-address": "192.168.30.240",
                     "mac-address": "00:05:86:71:d7:03",
                     "via": "ge-0/0/0.0"
+                },
+                "R8": {
+                    "Interface": "ge-0/0/0.0",
+                    "ip-address": "192.168.32.2",
+                    "mac-address": "00:05:86:71:23:00",
+                    "via": "ge-0/0/2.0"
                 }
             },
             "Terminal": {
@@ -389,7 +342,7 @@
                 "via": "R4"
             },
             "192.168.32.0": {
-                "via": "R1"
+                "via": "R4"
             },
             "192.168.40.0": {
                 "via": "R1"
@@ -466,6 +419,137 @@
                 "via": "R1"
             }
         }
+    },
+    "R6": {
+        "Connectivity": {
+            "Router": {
+                "R3": {
+                    "Interface": "ge-0/0/6.0",
+                    "ip-address": "10.0.1.1",
+                    "mac-address": "00:05:86:71:c6:06",
+                    "via": "ge-0/0/0.0"
+                },
+                "R7": {
+                    "Interface": "ge-0/0/0.0",
+                    "ip-address": "10.0.2.2",
+                    "mac-address": "00:05:86:71:34:00",
+                    "via": "ge-0/0/1.0"
+                }
+            },
+            "Terminal": {
+                "10.0.2.3": {
+                    "mac-address": "00:05:86:71:34:00",
+                    "via": "ge-0/0/1.0"
+                }
+            }
+        },
+        "Accesible": {
+            "10.0.1.0": {
+                "via": "R6"
+            },
+            "10.0.2.0": {
+                "via": "R6"
+            },
+            "10.0.3.0": {
+                "via": "R6"
+            }
+        }
+    },
+    "R7": {
+        "Connectivity": {
+            "Router": {
+                "R6": {
+                    "Interface": "ge-0/0/1.0",
+                    "ip-address": "10.0.2.1",
+                    "mac-address": "00:05:86:71:01:01",
+                    "via": "ge-0/0/0.0"
+                }
+            },
+            "Terminal": {
+                "192.168.11.10": {
+                    "mac-address": "00:50:79:66:68:0d",
+                    "via": "ge-0/0/1.0"
+                }
+            }
+        },
+        "Accesible": {
+            "10.0.2.0": {
+                "via": "R7"
+            },
+            "10.0.3.0": {
+                "via": "R6"
+            },
+            "50.10.10.6": {
+                "via": "R7"
+            },
+            "192.168.11.0": {
+                "via": "R7"
+            }
+        }
+    },
+    "R8": {
+        "Connectivity": {
+            "Router": {
+                "R4": {
+                    "Interface": "ge-0/0/2.0",
+                    "ip-address": "192.168.32.1",
+                    "mac-address": "00:05:86:71:49:02",
+                    "via": "ge-0/0/0.0"
+                }
+            },
+            "Terminal": {
+                "192.168.130.10": {
+                    "mac-address": "00:50:79:66:68:10",
+                    "via": "ge-0/0/1.0"
+                }
+            }
+        },
+        "Accesible": {
+            "50.10.10.1": {
+                "via": "R5"
+            },
+            "50.10.10.2": {
+                "via": "R5"
+            },
+            "192.168.10.0": {
+                "via": "R5"
+            },
+            "192.168.11.0": {
+                "via": "R5"
+            },
+            "192.168.20.0": {
+                "via": "R5"
+            },
+            "192.168.21.0": {
+                "via": "R5"
+            },
+            "192.168.30.0": {
+                "via": "R5"
+            },
+            "192.168.30.228": {
+                "via": "R5"
+            },
+            "192.168.31.0": {
+                "via": "R5"
+            },
+            "192.168.32.0": {
+                "via": "R8"
+            },
+            "192.168.40.0": {
+                "via": "R5"
+            },
+            "192.168.41.0": {
+                "via": "R5"
+            },
+            "192.168.42.0": {
+                "via": "R5"
+            },
+            "192.168.50.0": {
+                "via": "R5"
+            },
+            "192.168.130.0": {
+                "via": "R8"
+            }
+        }
     }
->>>>>>> c83067d3a27663a345faa130fda359cacd603957:nsr_project/nsr_project/result_json/topology_data.json
 }

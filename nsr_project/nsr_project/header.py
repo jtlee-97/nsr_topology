@@ -29,3 +29,23 @@ from main_parse.parse_main import parse_main
 
 parsing_data = {}
 topology_data={}
+
+
+def init_folder():
+    path=os.getcwd()
+    print('yes')
+    lg_sys_folder=os.path.join(path,'logical_systems')
+    result_folder=os.path.join(path,'result_json')
+
+    delete_folder(lg_sys_folder)
+    delete_folder(result_folder)
+
+
+
+def delete_folder(folder_path):
+    file_list=os.listdir(folder_path)
+    if len(file_list)!=0 :
+        for file_name in file_list:
+            file_path=os.path.join(folder_path,file_name)
+            if os.path.isfile(file_path):
+                os.remove(file_path)

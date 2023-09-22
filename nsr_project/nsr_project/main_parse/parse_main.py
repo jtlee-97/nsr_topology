@@ -55,9 +55,6 @@ def parse_main():
     #     header.json.dump(header.parsing_data, f, indent=4)
     
 
-    current_datetime = datetime.datetime.now()
-    formatted_datetime = current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
-    result_file_name = f'parsing_data_{formatted_datetime}.json'
-    result_path = os.path.join(result_file_path, result_file_name)
-    with open(result_path, 'w') as f:
-        json.dump(header.parsing_data, f, indent=4)
+    
+    with open(result_file_path+'/parsing_data.json', 'w') as make_file:
+        json.dump(header.parsing_data, make_file, indent=4)
