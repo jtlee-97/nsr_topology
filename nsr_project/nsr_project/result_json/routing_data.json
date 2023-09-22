@@ -1,0 +1,904 @@
+{
+    "R1": {
+        "50.10.10.1/32": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 00:10:50"
+        },
+        "50.10.10.2/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:53",
+            "next-hop": [
+                {
+                    "to": "192.168.10.241",
+                    "via": "ge-0/0/1.0"
+                }
+            ]
+        },
+        "100.10.20.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Static",
+            "preference": "5",
+            "age": "1d 00:10:11",
+            "next-hop": [
+                {
+                    "to": "100.10.30.254",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "100.10.30.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 00:10:11"
+        },
+        "100.10.30.167/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 00:10:12"
+        },
+        "192.168.10.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 00:10:11"
+        },
+        "192.168.10.240/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 00:10:12"
+        },
+        "192.168.11.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:53",
+            "next-hop": [
+                {
+                    "to": "192.168.10.241",
+                    "via": "ge-0/0/1.0"
+                }
+            ]
+        },
+        "192.168.20.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 00:10:11"
+        },
+        "192.168.20.240/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 00:10:12"
+        },
+        "192.168.21.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:12",
+            "next-hop": [
+                {
+                    "to": "192.168.20.241",
+                    "via": "ge-0/0/2.0"
+                }
+            ]
+        },
+        "192.168.30.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 00:10:11"
+        },
+        "192.168.30.228/30": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 00:10:11"
+        },
+        "192.168.30.229/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 00:10:12"
+        },
+        "192.168.30.240/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 00:10:12"
+        },
+        "192.168.31.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:06",
+            "next-hop": [
+                {
+                    "to": "192.168.30.242",
+                    "via": "ge-0/0/3.0"
+                }
+            ]
+        },
+        "192.168.32.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:36:27",
+            "next-hop": [
+                {
+                    "to": "192.168.30.230",
+                    "via": "ge-0/0/4.0"
+                }
+            ]
+        },
+        "192.168.40.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:05",
+            "next-hop": [
+                {
+                    "to": "192.168.50.241",
+                    "via": "ge-0/0/7.0"
+                }
+            ]
+        },
+        "192.168.41.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:05",
+            "next-hop": [
+                {
+                    "to": "192.168.20.241",
+                    "via": "ge-0/0/2.0"
+                },
+                {
+                    "to": "192.168.50.241",
+                    "via": "ge-0/0/7.0"
+                }
+            ]
+        },
+        "192.168.42.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:22",
+            "next-hop": [
+                {
+                    "to": "192.168.20.241",
+                    "via": "ge-0/0/2.0"
+                }
+            ]
+        },
+        "192.168.50.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "19:27:10"
+        },
+        "192.168.50.240/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "19:27:10"
+        },
+        "224.0.0.5/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "1d 00:10:54"
+        }
+    },
+    "R2": {
+        "50.10.10.1/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:49",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "50.10.10.2/32": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "23:31:49"
+        },
+        "192.168.10.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 00:54:12"
+        },
+        "192.168.10.241/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 00:54:13"
+        },
+        "192.168.11.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 00:54:12"
+        },
+        "192.168.11.1/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 00:54:13"
+        },
+        "192.168.20.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:49",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.21.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:07",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.30.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:49",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.30.228/30": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:49",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.31.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:01",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.32.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:49",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.40.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:00",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.41.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:13",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.42.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:18",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.50.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:05",
+            "next-hop": [
+                {
+                    "to": "192.168.10.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "224.0.0.5/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "1d 00:54:55"
+        }
+    },
+    "R3": {
+        "50.10.10.1/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "50.10.10.2/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "50.10.10.3/32": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "20:14:13"
+        },
+        "192.168.10.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.11.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.20.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "20:13:31"
+        },
+        "192.168.20.241/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "20:13:32"
+        },
+        "192.168.21.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "20:13:31"
+        },
+        "192.168.21.1/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "20:13:31"
+        },
+        "192.168.30.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.30.228/30": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.31.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.32.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.40.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:07",
+            "next-hop": [
+                {
+                    "to": "192.168.42.241",
+                    "via": "ge-0/0/5.0"
+                }
+            ]
+        },
+        "192.168.41.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:14",
+            "next-hop": [
+                {
+                    "to": "192.168.42.241",
+                    "via": "ge-0/0/5.0"
+                }
+            ]
+        },
+        "192.168.42.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "19:27:19"
+        },
+        "192.168.42.240/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "19:27:19"
+        },
+        "192.168.50.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:07",
+            "next-hop": [
+                {
+                    "to": "192.168.20.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "224.0.0.5/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:14:15"
+        }
+    },
+    "R4": {
+        "50.10.10.1/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "50.10.10.2/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.10.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.11.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.20.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.21.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:10",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.30.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 17:56:20"
+        },
+        "192.168.30.228/30": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.30.242/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 17:56:20"
+        },
+        "192.168.31.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 17:15:04"
+        },
+        "192.168.31.1/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 17:15:04"
+        },
+        "192.168.32.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.40.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:03",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.41.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:16",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.42.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:20",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.50.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:08",
+            "next-hop": [
+                {
+                    "to": "192.168.30.240",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "224.0.0.5/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "1d 19:10:31"
+        }
+    },
+    "R5": {
+        "50.10.10.1/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:36:26",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "50.10.10.2/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:52",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.10.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:36:26",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.11.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:31:52",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.20.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:36:26",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.21.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "20:13:11",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.30.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "23:36:26",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.30.228/30": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 17:27:45"
+        },
+        "192.168.30.230/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 17:27:45"
+        },
+        "192.168.31.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "22:58:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.32.0/24": {
+            "active-tag": "*",
+            "protocol-name": "Direct",
+            "preference": "0",
+            "age": "1d 17:22:48"
+        },
+        "192.168.32.1/32": {
+            "active-tag": "*",
+            "protocol-name": "Local",
+            "preference": "0",
+            "age": "1d 17:22:48"
+        },
+        "192.168.40.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:04",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.41.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:16",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.42.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:21",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "192.168.50.0/24": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "19:27:08",
+            "next-hop": [
+                {
+                    "to": "192.168.30.229",
+                    "via": "ge-0/0/0.0"
+                }
+            ]
+        },
+        "224.0.0.5/32": {
+            "active-tag": "*",
+            "protocol-name": "OSPF",
+            "preference": "10",
+            "age": "1d 17:28:26"
+        }
+    }
+}
