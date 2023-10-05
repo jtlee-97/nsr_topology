@@ -79,7 +79,7 @@ def move_logical(lg_sys_list):
             lg_file = header.re.search(lg, file)
             if lg_file is not None:
                 src = path + '/' + file
-                # ÀÌµ¿À¸·Î ÀÎÇÑ µð¹ö±× ¿À·ù º¹Á¦·Î º¯°æ
+                # ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 #header.shutil.move(src, dsc)
                 header.shutil.copy(src, dsc)
 
