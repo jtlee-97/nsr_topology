@@ -1110,6 +1110,14 @@
                 }
             }
         },
+        "nat": {
+            "NAT-SET": {
+                "NAT_TEST_RULE": {
+                    "match-direction": "input",
+                    "LAB1": {}
+                }
+            }
+        },
         "routing table": {
             "destination": {
                 "50.10.10.1/32": {
@@ -1719,6 +1727,14 @@
                         }
                     },
                     "lo0.32768": {}
+                }
+            }
+        },
+        "nat": {
+            "NAT-SET": {
+                "NAT_TEST_RULE": {
+                    "match-direction": "input",
+                    "LAB1": {}
                 }
             }
         },

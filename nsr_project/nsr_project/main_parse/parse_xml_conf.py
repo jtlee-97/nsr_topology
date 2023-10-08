@@ -58,6 +58,43 @@ def parse_xml_conf(xml_file):
                     l_intf_name = i.text
                     header.parsing_data[lg_name]['interfaces'][l_intf_name] = {}
 
+    # nat parsing
+    services=root.find('configuration/services')
+    if services is not None:
+        service_set_name=services.find('service-set/name').text
+        nat_rules_name=services.find('service-set/nat-rules/name').text
+
+        if service_set_name is not None:
+            header.parsing_data[hostname]['nat']={}
+            header.parsing_data[hostname]['nat'][service_set_name]={}
+            if nat_rules_name is not None:
+                header.parsing_data[hostname]['nat'][service_set_name][nat_rules_name]={}
+
+        nat=services.find('nat')
+        if nat is not None:
+            rule_name=nat.find('rule/name').text
+            if rule_name is not None:
+                if rule_name==nat_rules_name:
+                    match_direction=nat.find('rule/match-direction').text
+                    if match_direction is not None:
+                        header.parsing_data[hostname]['nat'][service_set_name][nat_rules_name]['match-direction']=match_direction
+            
+                terms=nat.findall('rule/term')
+                if terms is not None:
+                    for term in terms:
+                        term=term.find('name').text
+                        header.parsing_data[hostname]['nat'][service_set_name][nat_rules_name][term]={}
+                        
+                        
+                      
+
+
+            
+                
+
+
+            
+
     # make logical systems folder and Move file steps
     if not logical_sys_list: 
         pass
