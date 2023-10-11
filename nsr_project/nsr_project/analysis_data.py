@@ -37,7 +37,6 @@ def analysis_data(): #분석 진행하는 메인 함수
         header.topology_data[router]["Connectivity"]={}
         header.topology_data[router]["Connectivity"]["Router"]={}
         header.topology_data[router]["Connectivity"]["Terminal"]={}
-        header.topology_data[router]['Accesible']={}
 
         for port in arp_data[router].keys():
             for arp_ip in arp_data[router][port].keys():
@@ -49,9 +48,14 @@ def analysis_data(): #분석 진행하는 메인 함수
                         header.topology_data[router]['Connectivity']['Router'][c_router]['mac-address']=arp_data[router][port][arp_ip]['mac-address']
                         header.topology_data[router]['Connectivity']['Router'][c_router]['via']=port
                     else:
-                        header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]={}
-                        header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]['mac-address']=arp_data[router][port][arp_ip]['mac-address']
-                        header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]['via']=port
+                        if 'nat' in arp_data[router][port][arp_ip].keys():
+                            header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]={}
+                            header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]['mac-address']=arp_data[router][port][arp_ip]['mac-address']
+                            header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]['via']=port
+                        else:
+                            header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]={}
+                            header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]['mac-address']=arp_data[router][port][arp_ip]['mac-address']
+                            header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]['via']=port
                     
 
     # routers=json_data.keys()
@@ -87,28 +91,33 @@ def analysis_data(): #분석 진행하는 메인 함수
     #     #                          header.topology_data[router]["Connectivity"]["Terminal"][arp_ip]['via']=lo_intf
 
 
-    #     # 접근성 분석
+    # 접근성 분석
+
+    routers=json_data.keys()
+
+    for router in routers:
         
-    #     if 'routing table' in json_data[router]: #라우팅 테이블이 있으면 접근성 분석
-    #         dest_list=routing_data[router].keys()
-    #         for dest in dest_list:
-    #             protocol_type=routing_data[router][dest]['protocol-name']
-    #             dest_network=find_network(dest)
-    #             if protocol_type=='Direct':
-    #                 header.topology_data[router]['Accesible'][dest_network]={}
-    #                 header.topology_data[router]['Accesible'][dest_network]['via']=router
-    #             elif protocol_type=='OSPF':
-    #                 if 'next-hop' in routing_data[router][dest]:
-    #                     next_hop_lst=routing_data[router][dest]['next-hop']
-    #                     for next_hop in next_hop_lst:
-    #                         next_ip=next_hop['to']
-    #                         for r in routers:
-    #                             ip_lst=ip_data[r].keys()
-    #                             for ip in ip_lst:
-    #                                 ip_sp=ip.split('/')[0]
-    #                                 if next_ip == ip_sp:
-    #                                     header.topology_data[router]['Accesible'][dest_network]={}
-    #                                     header.topology_data[router]['Accesible'][dest_network]['via']=r
+        if 'routing table' in json_data[router]: #라우팅 테이블이 있으면 접근성 분석
+            header.topology_data[router]['Accesible']={}
+            dest_list=routing_data[router].keys()
+            for dest in dest_list:
+                protocol_type=routing_data[router][dest]['protocol-name']
+                dest_network=find_network(dest)
+                if protocol_type=='Direct':
+                    header.topology_data[router]['Accesible'][dest_network]={}
+                    header.topology_data[router]['Accesible'][dest_network]['via']=router
+                elif protocol_type=='OSPF':
+                    if 'next-hop' in routing_data[router][dest]:
+                        next_hop_lst=routing_data[router][dest]['next-hop']
+                        for next_hop in next_hop_lst:
+                            next_ip=next_hop['to']
+                            for r in routers:
+                                ip_lst=ip_data[r].keys()
+                                for ip in ip_lst:
+                                    ip_sp=ip.split('/')[0]
+                                    if next_ip == ip_sp:
+                                        header.topology_data[router]['Accesible'][dest_network]={}
+                                        header.topology_data[router]['Accesible'][dest_network]['via']=r
                                         
                                 
                             
@@ -252,7 +261,7 @@ def parsing_routing_inf(parsing_result): # 각 라우터의 라우팅 테이블 
     routers=parsing_result.keys()
 
     for router in routers:
-        if 'routing table' in parsing_result[router]: #라우팅 테이블이 있으면 파싱시작 - 현재 논리적 시스템 라우팅 테이블 포함 안됨.. 추가 필요.
+        if 'routing table' in parsing_result[router]: 
             routing_data[router]=parsing_result[router]['routing table']['destination']
             
     return routing_data
