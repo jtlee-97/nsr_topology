@@ -31,16 +31,11 @@ def parse_xml_conf(xml_file):
     header.parsing_data[hostname]['interfaces'] = {}
     
     # Basic interface layer construction steps
-    interfaces = root.findall('configuration/interfaces/interface')
+    interfaces = root.findall('configuration/interfaces/interface/name')
     if interfaces is not None:
         for interface in interfaces:
-            interface_name = interface.find('name').text
+            interface_name = interface.text
             header.parsing_data[hostname]['interfaces'][interface_name] = {}
-            unit=interface.find('unit/name').text
-            lg_interface=interface_name+'.'+unit
-            header.parsing_data[hostname]['interfaces'][interface_name]['logical-interfaces']={}
-            header.parsing_data[hostname]['interfaces'][interface_name]['logical-interfaces'][lg_interface]={}
-            
     
     # Logical-system existence check and classification steps
     logical_syss = root.findall('configuration/logical-systems')
@@ -63,7 +58,6 @@ def parse_xml_conf(xml_file):
                     l_intf_name = i.text
                     header.parsing_data[lg_name]['interfaces'][l_intf_name] = {}
 
-
     # nat parsing
     services=root.find('configuration/services')
     if services is not None:
@@ -81,31 +75,25 @@ def parse_xml_conf(xml_file):
             rule_name=nat.find('rule/name').text
             if rule_name is not None:
                 if rule_name==nat_rules_name:
-                    terms=nat.findall('rule/term')
-                    if terms is not None:
-                        for term in terms:
-                            term_name=term.find('name').text
-                            header.parsing_data[hostname]['nat'][service_set_name][nat_rules_name][term_name]={}
-                            
-                            source=term.find('from/source-address/name').text
-                            header.parsing_data[hostname]['nat'][service_set_name][nat_rules_name][term_name]['from']=source
+                    match_direction=nat.find('rule/match-direction').text
+                    if match_direction is not None:
+                        header.parsing_data[hostname]['nat'][service_set_name][nat_rules_name]['match-direction']=match_direction
+            
+                terms=nat.findall('rule/term')
+                if terms is not None:
+                    for term in terms:
+                        term=term.find('name').text
+                        header.parsing_data[hostname]['nat'][service_set_name][nat_rules_name][term]={}
+                        
+                        
+                      
 
-                            translated=term.find('then/translated/source-prefix').text
-                            header.parsing_data[hostname]['nat'][service_set_name][nat_rules_name][term_name]['then']=translated
 
-        nat_interfaces=root.findall('configuration/interfaces/interface')
+            
+                
 
-        for nat_interface in nat_interfaces:
-            input=nat_interface.find('unit/family/inet/service/input/service-set/name')
-            output=nat_interface.find('unit/family/inet/service/output/service-set/name')
 
-            if input is not None and input.text==service_set_name:
-                if output is not None and output.text==service_set_name:
-                    nat_interface_name=nat_interface.find('name').text
-                    nat_lg_interface_name=nat_interface_name+'.'+nat_interface.find('unit/name').text
-                    header.parsing_data[hostname]['interfaces'][nat_interface_name]['logical-interfaces'][nat_lg_interface_name]['nat']=service_set_name
-                   
-
+            
 
     # make logical systems folder and Move file steps
     if not logical_sys_list: 
