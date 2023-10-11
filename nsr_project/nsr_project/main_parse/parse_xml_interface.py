@@ -25,9 +25,10 @@ def parse_xml_interface(xml_file):
     root = tree.getroot()
 
     # Check the belonging device
-    match = header.re.search(r'R\d', xml_file)
-    hostname = match.group()
-
+    # match = header.re.search(r'R\d', xml_file)
+    # hostname = match.group(1)
+    file_name=os.path.basename(xml_file)
+    hostname=file_name.split('_')[0]
     # namespace (xml file)
     namespace_element = root[0]
     namespace = namespace_element.tag.split('}')[0][1:]
@@ -41,23 +42,54 @@ def parse_xml_interface(xml_file):
         if intf_py_name in header.parsing_data[hostname]['interfaces']:
             # Logical Interface
             lg_interfaces = intf_py_table.findall('interface:logical-interface',namespace)
-            if lg_interfaces is not None:
-                header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'] = {}
-                for logical_intf in lg_interfaces: 
-                    lg_intf_name = logical_intf.find('interface:name',namespace).text
-                    header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name] = {}
 
-                    address_family = logical_intf.findall('interface:address-family',namespace)
-                    if len(address_family) != 0:
-                        header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'] = {}
-                        for fam in address_family:
-                            fam_name = fam.find('interface:address-family-name',namespace).text
-                            header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name] = {}
-                            interface_address = fam.find('interface:interface-address',namespace)
-                            if interface_address is not None:
-                                ifa_local = interface_address.find('interface:ifa-local',namespace).text
-                                header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name]['ifa-local'] = ifa_local
-        
+            if 'logical-interfaces' not in header.parsing_data[hostname]['interfaces'][intf_py_name]:
+                if lg_interfaces is not None:
+                    header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'] = {}
+                    for logical_intf in lg_interfaces: 
+                        lg_intf_name = logical_intf.find('interface:name',namespace).text
+                        header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name] = {}
+
+                        address_family = logical_intf.findall('interface:address-family',namespace)
+                        if len(address_family) != 0:
+                            header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'] = {}
+                            for fam in address_family:
+                                fam_name = fam.find('interface:address-family-name',namespace).text
+                                header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name] = {}
+                                interface_address = fam.find('interface:interface-address',namespace)
+                                if interface_address is not None:
+                                    ifa_local = interface_address.find('interface:ifa-local',namespace).text
+                                    header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name]['ifa-local'] = ifa_local
+            else:
+                if lg_interfaces is not None:
+                    for logical_intf in lg_interfaces: 
+                        lg_intf_name = logical_intf.find('interface:name',namespace).text
+
+                        if lg_intf_name not in header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces']:
+                            header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name] = {}
+                            address_family = logical_intf.findall('interface:address-family',namespace)
+                            if len(address_family) != 0:
+                                header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'] = {}
+                                for fam in address_family:
+                                    fam_name = fam.find('interface:address-family-name',namespace).text
+                                    header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name] = {}
+                                    interface_address = fam.find('interface:interface-address',namespace)
+                                    if interface_address is not None:
+                                        ifa_local = interface_address.find('interface:ifa-local',namespace).text
+                                        header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name]['ifa-local'] = ifa_local
+
+                        else:
+                            address_family = logical_intf.findall('interface:address-family',namespace)
+                            if len(address_family) != 0:
+                                header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'] = {}
+                                for fam in address_family:
+                                    fam_name = fam.find('interface:address-family-name',namespace).text
+                                    header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name] = {}
+                                    interface_address = fam.find('interface:interface-address',namespace)
+                                    if interface_address is not None:
+                                        ifa_local = interface_address.find('interface:ifa-local',namespace).text
+                                        header.parsing_data[hostname]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name]['ifa-local'] = ifa_local
+                
         # If the pysical interface name is not in parsing_data, create new pysical interface name and continue
         else: 
             if 'logical-systems' in header.parsing_data[hostname]:
@@ -81,6 +113,12 @@ def parse_xml_interface(xml_file):
                                         if interface_address is not None:
                                             interface_local = interface_address.find('interface:ifa-local',namespace).text
                                             header.parsing_data[lg_syst]['interfaces'][intf_py_name]['logical-interfaces'][lg_intf_name]['address-family'][fam_name]['ifa-local'] = interface_local
+
+# nat parsing
+
+    if 'nat' in header.parsing_data[hostname]:
+        interfaces=root.find('')
+
 
 # Before Code (mid term' 0831)
 """
