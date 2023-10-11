@@ -125,7 +125,7 @@ def move_logical(lg_sys_list):
     file_list = header.os.listdir(path)
     for lg in lg_sys_list:
         for file in file_list:
-            lg_file = header.re.search(lg, file)
+            lg_file = header.re.search(lg+'_route', file)
             if lg_file is not None:
                 src = path + '/' + file
                 # �̵����� ���� ����� ���� ������ ����

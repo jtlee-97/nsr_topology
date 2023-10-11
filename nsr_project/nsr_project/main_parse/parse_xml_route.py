@@ -21,22 +21,30 @@ parent_directory = os.path.abspath(os.path.join(current_script_directory, ".."))
 config_file_path = os.path.join(parent_directory, "config_file")
 
 def parse_xml_route(xml_file):
+    
     tree = header.ET.parse(xml_file)
     root = tree.getroot()
+   
+    # Check the device name
+    file_name=os.path.basename(xml_file)
+    hostname=file_name.split('_')[0]
     
-    # Check the belonging device
-    match = header.re.search(r'R\d', xml_file)
-    hostname = match.group()
+    # match = header.re.search(r'R\d', xml_file)
+    # hostname = match.group()
 
     # namespace (xml file) 
     namespace_element = root[0]
     namespace = namespace_element.tag.split('}')[0][1:]
     namespace = {'routing':namespace}
-    
+
     header.parsing_data[hostname]['routing table'] = {}
     header.parsing_data[hostname]['routing table']['destination'] = {}
+    
+    if 'routing table' in header.parsing_data[hostname]:
+        print(hostname,header.parsing_data[hostname]['routing table'])
 
     route_tables = root.findall('.//routing:route-table', namespace)
+
     for route_table in route_tables:
         table_name = route_table.find('routing:table-name', namespace).text
         if table_name is not None:
@@ -90,6 +98,12 @@ def parse_xml_route(xml_file):
                 for nh_entry in nh_entries:
                     nh_to = nh_entry.find('routing:to', namespace)
                     nh_via = nh_entry.find('routing:via', namespace)
+                    nh_service=nh_entry.find('routing:nh-service',namespace)
+                    if nh_service is not None:
+                        header.parsing_data[hostname]['routing table']['destination'][rt_destination]['next-hop']=[]
+                        next_hop={'service':nh_service.text}
+
+                        header.parsing_data[hostname]['routing table']['destination'][rt_destination]['next-hop'].append(next_hop)
                     if nh_to is not None and nh_via is not None:
                         if 'next-hop' not in header.parsing_data[hostname]['routing table']['destination'][rt_destination]:
                             header.parsing_data[hostname]['routing table']['destination'][rt_destination]['next-hop'] = []
@@ -99,3 +113,6 @@ def parse_xml_route(xml_file):
                             'via': nh_via.text
                         }
                         header.parsing_data[hostname]['routing table']['destination'][rt_destination]['next-hop'].append(next_hop)
+
+
+   
