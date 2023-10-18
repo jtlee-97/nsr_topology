@@ -23,9 +23,6 @@ config_file_path = os.path.join(parent_directory, "config_file")
 
 def parse_xml_arp(xml_file):
 
-    # ������ Ȯ�� (09.19) = ���� ������ �Űܹ����� logical system ������ ���о�� (����ó�� �ʿ�)
-    # �̴�, �ʱ� ���� �� �߻���. ��� ������ �о�� ������ ����Ʈ ���� ��, �� ������ �������µ� conf���� ���� �Űܹ����� ������, move�� �ƴ� �������·� �ϴ� ���� ���� �� ����
-    # ���� logical_systems�� 4���� ������ �Ű����ִ� ��Ȳ�̶�� ��������� �߻����� ����.
     tree = header.ET.parse(xml_file)
     root = tree.getroot()
 
@@ -45,43 +42,24 @@ def parse_xml_arp(xml_file):
     for arp_table in arp_tables:
         arp_intf_name = arp_table.find('arp:interface-name',namespace).text
         
-        if 'logical-systems' in header.parsing_data[hostname]:
-            for py_intf in header.parsing_data[hostname]['interfaces']:
-                for ly_intf in header.parsing_data[hostname]['interfaces'][py_intf]['logical-interfaces']:
-                    if  ly_intf == arp_intf_name:
-                        ip = arp_table.find('arp:ip-address',namespace).text
-                        mac = arp_table.find('arp:mac-address',namespace).text
-                        add_arp_info(hostname, py_intf, ly_intf, ip, mac)
-                    
-            for lg_sys in header.parsing_data[hostname]['logical-systems']:
-                for py_intf in header.parsing_data[lg_sys]['interfaces']:
-                    for ly_intf in header.parsing_data[lg_sys]['interfaces'][py_intf]['logical-interfaces']:
-                        if  ly_intf == arp_intf_name:
-                            ip = arp_table.find('arp:ip-address',namespace).text
-                            mac = arp_table.find('arp:mac-address',namespace).text
-                            add_arp_info(lg_sys, py_intf, ly_intf, ip, mac)
-                    
-        else:
-            for py_intf in header.parsing_data[hostname]['interfaces']:
-                for ly_intf in header.parsing_data[hostname]['interfaces'][py_intf]['logical-interfaces']:
-                    if  ly_intf == arp_intf_name:
-                        ip = arp_table.find('arp:ip-address',namespace).text
-                        mac = arp_table.find('arp:mac-address',namespace).text
-                        add_arp_info(hostname, py_intf, ly_intf, ip, mac)
+        for py_intf in header.parsing_data[hostname]['interfaces']:
+            for ly_intf in header.parsing_data[hostname]['interfaces'][py_intf]['logical-interfaces']:
+                if  ly_intf == arp_intf_name:
+                    ip = arp_table.find('arp:ip-address',namespace).text
+                    mac = arp_table.find('arp:mac-address',namespace).text
+                    add_arp_info(hostname, py_intf, ly_intf, ip, mac)
 
-
+      
 def add_arp_info(hostname, intf_name, ly_intf, ip, mac):
     if 'arp_table' not in header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]:
-        #header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]['arp_table'] = {}
+        
         header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]['arp_table'] = []
         
-        #header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]['arp_table']['ip-address'] = ip
-        #header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]['arp_table']['mac-address'] = mac
+        
         header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]['arp_table'].append({'ip-address': ip, 'mac-address': mac})
 
     else:
-        #header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]['arp_table']['ip-address'] = ip
-        #header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]['arp_table']['mac-address'] = mac
+        
         header.parsing_data[hostname]['interfaces'][intf_name]['logical-interfaces'][ly_intf]['arp_table'].append({'ip-address': ip, 'mac-address': mac})
 
     # [To be modified] Currently, we store information about the arp table as a list and it is classified by index in the actual json

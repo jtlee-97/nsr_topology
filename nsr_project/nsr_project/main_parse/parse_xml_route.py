@@ -37,12 +37,11 @@ def parse_xml_route(xml_file):
     namespace = namespace_element.tag.split('}')[0][1:]
     namespace = {'routing':namespace}
 
+    # routing table 
+
     header.parsing_data[hostname]['routing table'] = {}
     header.parsing_data[hostname]['routing table']['destination'] = {}
     
-    if 'routing table' in header.parsing_data[hostname]:
-        print(hostname,header.parsing_data[hostname]['routing table'])
-
     route_tables = root.findall('.//routing:route-table', namespace)
 
     for route_table in route_tables:
@@ -113,6 +112,7 @@ def parse_xml_route(xml_file):
                             'via': nh_via.text
                         }
                         header.parsing_data[hostname]['routing table']['destination'][rt_destination]['next-hop'].append(next_hop)
+
 
 
    

@@ -32,12 +32,12 @@ topology_data={}
 
 
 def init_folder():
+
     path=os.getcwd()
+    
     print('yes')
-    lg_sys_folder=os.path.join(path,'logical_systems')
     result_folder=os.path.join(path,'result_json')
 
-    delete_folder(lg_sys_folder)
     delete_folder(result_folder)
 
 

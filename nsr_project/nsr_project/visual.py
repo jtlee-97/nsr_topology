@@ -28,7 +28,6 @@ for router in routers:
     for t_connect in terminal_connect_lst:
         g1.add_edge(router,t_connect)
 
-
 pos1=nx.kamada_kawai_layout(g1)
 pos2=nx.kamada_kawai_layout(g2)
 
